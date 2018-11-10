@@ -2,17 +2,19 @@
 using Microsoft.AspNetCore.Mvc;
 using IntroMvc.Models;
 using Microsoft.Extensions.Configuration;
+using IntroMvc.Data;
 
 namespace IntroMvc.Controllers
 {
-    public class HomeController : Controller
+    public class HomeController : BaseController
     {
         private readonly IConfiguration configuration;
-
+        
         public HomeController(IConfiguration configuration)
         {
             this.configuration = configuration;
         }
+
 
         public IActionResult Index()
         {

@@ -1,6 +1,6 @@
-﻿namespace IntroMvc.Models
+﻿namespace IntroMvc.ViewModels
 {
-    public class Cat
+    public class CatViewModel
     {
         public string Id { get; set; }
         public string Name { get; set; }

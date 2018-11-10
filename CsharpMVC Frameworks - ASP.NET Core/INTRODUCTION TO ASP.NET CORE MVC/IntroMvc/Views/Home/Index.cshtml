@@ -3,5 +3,9 @@
 }
 <h1>Fluffy Duffy Munchkin Cats</h1>
 <ul>
-    <li>@ViewData</li>
+    @foreach (var item in @Context)
+    {
+        <li>@item</li>
+    }
 </ul>
+<p><a href="/cat/add">Add Cat</a></p>

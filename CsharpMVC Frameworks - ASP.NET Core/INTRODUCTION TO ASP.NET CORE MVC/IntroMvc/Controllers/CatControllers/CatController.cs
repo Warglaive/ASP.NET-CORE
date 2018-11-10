@@ -1,9 +1,10 @@
 ﻿using IntroMvc.Models;
+using IntroMvc.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 
 namespace IntroMvc.Controllers.CatControllers
 {
-    public class CatController : Controller
+    public class CatController : BaseController
     {
         public IActionResult Index()
         {
@@ -13,12 +14,23 @@ namespace IntroMvc.Controllers.CatControllers
         [HttpGet]
         public IActionResult Add()
         {
-            ////add cat to db
-            //var cat = new Cat
-            //{
-            //    Name = this.ViewData["name"].ToString()
-            //};
             return View();
+        }
+
+        [HttpPost("/cat/add")]
+        public IActionResult AddCat(CatViewModel model)
+        {
+            var cat = new Cat
+            {
+                Name = model.Name,
+                Age = model.Age,
+                Breed = model.Breed,
+                ImageUrl = model.ImageUrl
+
+            };
+            this.Context.Cats.Add(cat);
+            this.Context.SaveChanges();
+            return RedirectToAction();
         }
     }
 }
