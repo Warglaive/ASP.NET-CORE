@@ -1,0 +1,12 @@
+﻿@{
+    ViewData["Title"] = "AddCat";
+}
+
+<h1>AddCat</h1>
+<form action="/cat/add" method="post">
+    <p>Name: <input name="name" type="text" /></p>
+    <p>Age: <input name="age" type="number" /></p>
+    <p>Breed: <input name="breed" type="text" /></p>
+    <p>Image: <input name="img" type="text" /></p>
+    <input type="submit" value="Add Cat"/>
+</form>
