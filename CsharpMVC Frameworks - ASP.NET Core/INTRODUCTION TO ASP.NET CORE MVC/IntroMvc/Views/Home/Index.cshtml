@@ -1,11 +1,12 @@
-﻿@{
+﻿@model IntroMvc.Data.ApplicationDbContext
+@{
     ViewData["Title"] = "Home Page";
 }
 <h1>Fluffy Duffy Munchkin Cats</h1>
 <ul>
-    @foreach (var item in @Home)
+    @foreach (var cat in @Model.Cats)
     {
-        <li>@item</li>
+        <li>@cat.Name</li>
     }
 </ul>
 <p><a href="/cat/add">Add Cat</a></p>

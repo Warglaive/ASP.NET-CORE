@@ -1,4 +1,6 @@
-﻿using IntroMvc.Models;
+﻿using System;
+using System.Linq;
+using IntroMvc.Models;
 using IntroMvc.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 
@@ -6,11 +8,6 @@ namespace IntroMvc.Controllers.CatControllers
 {
     public class CatController : BaseController
     {
-        public IActionResult Index()
-        {
-            return View();
-        }
-
         [HttpGet]
         public IActionResult Add()
         {
@@ -28,7 +25,9 @@ namespace IntroMvc.Controllers.CatControllers
                 ImageUrl = model.ImageUrl
 
             };
+
             this.Context.Cats.Add(cat);
+
             this.Context.SaveChanges();
             return RedirectToAction();
         }

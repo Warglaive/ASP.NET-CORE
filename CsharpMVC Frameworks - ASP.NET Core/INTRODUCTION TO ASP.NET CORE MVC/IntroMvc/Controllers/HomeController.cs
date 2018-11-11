@@ -1,24 +1,24 @@
-﻿using System.Diagnostics;
+﻿using System;
+using System.Diagnostics;
+using System.Linq;
 using Microsoft.AspNetCore.Mvc;
 using IntroMvc.Models;
 using Microsoft.Extensions.Configuration;
-using IntroMvc.Data;
 
 namespace IntroMvc.Controllers
 {
     public class HomeController : BaseController
     {
         private readonly IConfiguration configuration;
-        
+
         public HomeController(IConfiguration configuration)
         {
             this.configuration = configuration;
         }
 
-
         public IActionResult Index()
         {
-            return View();
+            return View(this.Context);
         }
 
         public IActionResult About()
