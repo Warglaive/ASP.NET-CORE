@@ -31,5 +31,17 @@ namespace IntroMvc.Controllers.CatControllers
             this.Context.SaveChanges();
             return RedirectToAction();
         }
+
+        //  [HttpPost("/show/name")]
+        public IActionResult Show(string name)
+        {
+            //get by username
+            var cat = this.Context.Cats.FirstOrDefault(x => x.Name == name);
+            if (cat != null)
+            {
+                return this.View(cat);
+            }
+            throw new NullReferenceException();
+        }
     }
 }

@@ -6,7 +6,7 @@
 <ul>
     @foreach (var cat in @Model.Cats)
     {
-        <li>@cat.Name</li>
+        <li><a href="/show/@cat.Name">@cat.Name</a></li>
     }
 </ul>
 <p><a href="/cat/add">Add Cat</a></p>

@@ -64,6 +64,13 @@ namespace IntroMvc
                     name: "default",
                     template: "{controller=Home}/{action=Index}/{id?}");
             });
+            app.UseMvc(routes =>
+            {
+                routes.MapRoute(
+                    name: "showCats",
+                    template: "/show/{name}",
+                defaults: new { controller = "Cat", action = "Show" });
+            });
         }
     }
 }
