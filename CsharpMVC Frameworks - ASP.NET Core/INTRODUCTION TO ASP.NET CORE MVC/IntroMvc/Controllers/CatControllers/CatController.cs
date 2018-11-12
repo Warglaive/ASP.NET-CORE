@@ -32,7 +32,7 @@ namespace IntroMvc.Controllers.CatControllers
             return RedirectToAction();
         }
 
-        //  [HttpPost("/show/name")]
+        [HttpGet("/show/{name}")]
         public IActionResult Show(string name)
         {
             //get by username

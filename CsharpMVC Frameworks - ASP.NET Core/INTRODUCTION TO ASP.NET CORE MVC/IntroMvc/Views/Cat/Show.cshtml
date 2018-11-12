@@ -1,7 +1,10 @@
 ﻿@model IntroMvc.Models.Cat
 @{
-    ViewData["Title"] = "ShowCat";
+    ViewData["Title"] = "Cat Page";
 }
 
-<h2>ShowCat</h2>
-@Model.Name
+<h2>Cat Page</h2>
+<h1>@Model.Name</h1>
+<img src="@Model.ImageUrl" alt="@Model.Name" style="max-width: 300px">
+<p>Age: @Model.Age</p>
+<p>Breed: @Model.Breed</p>
