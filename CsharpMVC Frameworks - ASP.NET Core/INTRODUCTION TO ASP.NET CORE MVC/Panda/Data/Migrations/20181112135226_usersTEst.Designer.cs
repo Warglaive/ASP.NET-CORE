@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Panda.Data;
 
 namespace Panda.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20181112135226_usersTEst")]
+    partial class usersTEst
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -199,8 +201,7 @@ namespace Panda.Data.Migrations
 
                     b.Property<int>("Status");
 
-                    b.Property<decimal>("Weight")
-                        .HasColumnType("decimal(18, 2)");
+                    b.Property<decimal>("Weight");
 
                     b.HasKey("Id");
 
@@ -214,8 +215,7 @@ namespace Panda.Data.Migrations
                     b.Property<string>("Id")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<decimal>("Fee")
-                        .HasColumnType("decimal(18,2)");
+                    b.Property<decimal>("Fee");
 
                     b.Property<DateTime>("IssuedOn");
 

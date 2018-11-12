@@ -7,7 +7,7 @@ namespace Panda.Data
     public class ApplicationDbContext : IdentityDbContext
     {
         public DbSet<Package> Packages { get; set; }
-        public DbSet<User> Users { get; set; }
+        public new DbSet<User> Users { get; set; }
         public DbSet<Receipt> Receipts { get; set; }
 
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)

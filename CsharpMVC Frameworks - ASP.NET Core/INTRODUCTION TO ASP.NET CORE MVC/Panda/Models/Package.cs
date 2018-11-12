@@ -1,5 +1,6 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using Panda.Models.Enums;
 
 namespace Panda.Models
@@ -9,6 +10,7 @@ namespace Panda.Models
         [Key]
         public string Id { get; set; }
         public string Description { get; set; }
+        [Column(TypeName = "decimal(18, 2)")]
         public decimal Weight { get; set; }
         public string ShippingAddress { get; set; }
         public Status Status { get; set; }
