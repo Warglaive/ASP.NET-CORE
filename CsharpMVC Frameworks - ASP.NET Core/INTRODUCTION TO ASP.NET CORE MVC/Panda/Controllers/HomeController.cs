@@ -1,25 +1,15 @@
-﻿using System;
-using System.Diagnostics;
-using System.Linq;
+﻿using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
-using IntroMvc.Models;
-using IntroMvc.ViewModels;
-using Microsoft.Extensions.Configuration;
+using Panda.Models;
+using Panda.ViewModels;
 
-namespace IntroMvc.Controllers
+namespace Panda.Controllers
 {
     public class HomeController : BaseController
     {
-        private readonly IConfiguration configuration;
-
-        public HomeController(IConfiguration configuration)
-        {
-            this.configuration = configuration;
-        }
-
         public IActionResult Index()
         {
-            return View(this.Context);
+            return View();
         }
 
         public IActionResult About()

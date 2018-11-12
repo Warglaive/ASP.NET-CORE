@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.27130.2024
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IntroMvc", "IntroMvc\IntroMvc.csproj", "{09D91785-8C82-4872-B8A4-8FAC48B0E520}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Panda", "Panda\Panda.csproj", "{F9BE8148-A849-41B0-9380-274155E3939F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{09D91785-8C82-4872-B8A4-8FAC48B0E520}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{09D91785-8C82-4872-B8A4-8FAC48B0E520}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{09D91785-8C82-4872-B8A4-8FAC48B0E520}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F9BE8148-A849-41B0-9380-274155E3939F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F9BE8148-A849-41B0-9380-274155E3939F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F9BE8148-A849-41B0-9380-274155E3939F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F9BE8148-A849-41B0-9380-274155E3939F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

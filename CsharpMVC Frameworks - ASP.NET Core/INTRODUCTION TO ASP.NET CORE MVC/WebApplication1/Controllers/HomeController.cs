@@ -1,25 +1,18 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
+using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using IntroMvc.Models;
-using IntroMvc.ViewModels;
-using Microsoft.Extensions.Configuration;
+using WebApplication1.Models;
 
-namespace IntroMvc.Controllers
+namespace WebApplication1.Controllers
 {
-    public class HomeController : BaseController
+    public class HomeController : Controller
     {
-        private readonly IConfiguration configuration;
-
-        public HomeController(IConfiguration configuration)
-        {
-            this.configuration = configuration;
-        }
-
         public IActionResult Index()
         {
-            return View(this.Context);
+            return View();
         }
 
         public IActionResult About()
