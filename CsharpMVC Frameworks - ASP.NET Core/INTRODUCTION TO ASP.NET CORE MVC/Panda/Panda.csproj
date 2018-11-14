@@ -7,6 +7,11 @@
 
   <ItemGroup>
     <Content Remove="Views\Home\login.cshtml" />
+    <Content Remove="Views\Home\register.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="Views\Users\register.cshtml" />
   </ItemGroup>
 
   <ItemGroup>
