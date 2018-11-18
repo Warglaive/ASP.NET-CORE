@@ -1,6 +1,5 @@
 ﻿using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
-using Panda.Models;
 using Panda.ViewModels;
 
 namespace Panda.Controllers

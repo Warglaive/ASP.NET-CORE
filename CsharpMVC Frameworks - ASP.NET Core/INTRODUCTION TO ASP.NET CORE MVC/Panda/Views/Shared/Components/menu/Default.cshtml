@@ -1,0 +1,5 @@
+﻿@model List<Panda.Components.MenuItemViewModel>
+@foreach (var item in Model)
+{
+    <li><a href="@item.Url">@item.Title</a></li>
+}

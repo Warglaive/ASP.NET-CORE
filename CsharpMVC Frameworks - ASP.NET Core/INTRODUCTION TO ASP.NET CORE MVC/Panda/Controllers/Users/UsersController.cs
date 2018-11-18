@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Mvc;
 using Panda.Models;
 using Panda.Services;
 using Panda.Services.Contracts;
@@ -6,7 +7,7 @@ using Panda.ViewModels;
 
 namespace Panda.Controllers.Users
 {
-    public class UsersController : BaseController
+    public class UsersController : HomeController
     {
         public IHashService HashService;
 
@@ -14,10 +15,17 @@ namespace Panda.Controllers.Users
         {
             this.HashService = new HashService();
         }
+
         [HttpGet("Users/Login")]
         public IActionResult Login()
         {
             return View();
+        }
+
+        public async void Logout()
+        {
+            await this.SignInManager.SignOutAsync();
+            RedirectToAction("Index", "Home");
         }
 
         [HttpGet("Users/Register")]
