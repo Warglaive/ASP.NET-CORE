@@ -27,6 +27,7 @@ namespace Panda.Components
                     Title = "Facebook"
                 }
             };
+            //Shared/Components/menu/
             return this.View(viewModel);
         }
     }
