@@ -23,7 +23,16 @@
                         <li class="nav-item">
                             <a class="nav-link nav-link-white active" href="/">Home</a>
                         </li>
-                        @if (!this.SignInManager.IsSignedIn(User)) // if NOT logged in
+                        @if (this.SignInManager.IsSignedIn(User))
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link nav-link-white active" href="/receipts/index">Receipts</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link nav-link-white active" href="/users/logout">Logout</a>
+                            </li>
+                        }
+                        else
                         {
                             <li class="nav-item">
                                 <a class="nav-link nav-link-white active" href="/users/login">Login</a>
@@ -32,17 +41,11 @@
                                 <a class="nav-link nav-link-white active" href="/users/register">Register</a>
                             </li>
                         }
-                        else
-                        {
-                            <li class="nav-item">
-                                <a class="nav-link nav-link-white active" href="/users/receipts">Receipts</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link nav-link-white active" href="/users/logout">Logout</a>
-                            </li>
-                        }
                     </ul>
                 </div>
+                @*@{
+                        Html.RenderPartialAsync("_LoginPartial").Wait();
+                    }*@
             </nav>
         </header>
         @RenderBody()

@@ -7,10 +7,12 @@
 
   <ItemGroup>
     <Content Remove="Views\Home\login.cshtml" />
+    <Content Remove="Views\Home\receipts.cshtml" />
     <Content Remove="Views\Home\register.cshtml" />
   </ItemGroup>
 
   <ItemGroup>
+    <None Include="Views\Receipts\Index.cshtml" />
     <None Include="Views\Users\register.cshtml" />
   </ItemGroup>
 

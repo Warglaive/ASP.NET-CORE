@@ -47,7 +47,7 @@ namespace Panda.Controllers.Users
 
         public IActionResult Logout()
         {
-            SignInManager.SignOutAsync();
+            SignInManager.SignOutAsync().Wait();
             return RedirectToAction("Index", "Home");
         }
 
