@@ -38,7 +38,7 @@ namespace Panda.Controllers.Users
 
             if (user != null)
             {
-                this.SignInManager.SignInAsync(user, model.RememberMe);
+                this.SignInManager.SignInAsync(user, model.RememberMe).Wait();
                 return RedirectToAction("Index", "Home");
             }
 
@@ -47,7 +47,7 @@ namespace Panda.Controllers.Users
 
         public IActionResult Logout()
         {
-            HttpContext.SignOutAsync(IdentityConstants.ExternalScheme).GetAwaiter().GetResult();
+            SignInManager.SignOutAsync();
             return RedirectToAction("Index", "Home");
         }
 
@@ -79,6 +79,7 @@ namespace Panda.Controllers.Users
             }
             if (result.Succeeded)
             {
+                this.SignInManager.SignInAsync(user, false).Wait();
                 return RedirectToAction("Index", "Home");
             }
             return View();
