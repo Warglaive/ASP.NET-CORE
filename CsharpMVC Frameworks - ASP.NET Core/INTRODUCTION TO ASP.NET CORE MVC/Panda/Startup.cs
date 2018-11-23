@@ -44,6 +44,7 @@ namespace Panda
                     identityOptions.Password.RequireNonAlphanumeric = false;
                     identityOptions.Password.RequiredUniqueChars = 0;
                     identityOptions.Password.RequiredLength = 3;
+                    identityOptions.Password.RequireDigit = false;
                 })
                 .AddDefaultTokenProviders()
                 .AddEntityFrameworkStores<ApplicationDbContext>();

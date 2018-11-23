@@ -11,6 +11,8 @@ namespace Panda.Models
         [Required]
         public string Password { get; set; }
         [Required]
+        public string CustomPasswordHash { get; set; }
+        [Required]
         public override string Email { get; set; }
 
         public Role Role { get; set; }

@@ -32,26 +32,23 @@ namespace Panda.Controllers.Users
         public IActionResult Login(UserViewModel model)
         {
             var hashedPassword = this.HashService.Hash(model.Password);
-
+            //maybe context is null
             var user = this.SignInManager.UserManager.Users.FirstOrDefault(x =>
-                x.UserName == model.Username && x.PasswordHash == hashedPassword);
+                x.UserName == model.Username && x.CustomPasswordHash == hashedPassword);
 
             if (user != null)
             {
-                //var result = this.SignInManager.UserManager.CreateAsync(user, user.Password).Result;
-                //if (result.Succeeded)
-                //{
-                //    return RedirectToAction("Index", "Home");
-                //}
+                this.SignInManager.SignInAsync(user, model.RememberMe);
+                return RedirectToAction("Index", "Home");
             }
 
             return this.View();
         }
 
-        public void Logout()
+        public IActionResult Logout()
         {
             HttpContext.SignOutAsync(IdentityConstants.ExternalScheme).GetAwaiter().GetResult();
-            RedirectToAction("Index", "Home");
+            return RedirectToAction("Index", "Home");
         }
 
         [HttpGet("Users/Register")]
@@ -69,9 +66,17 @@ namespace Panda.Controllers.Users
                 UserName = model.Username,
                 Password = model.Password,
                 Email = model.Email,
-                PasswordHash = hashedPassword
+                CustomPasswordHash = hashedPassword
             };
             var result = this.SignInManager.UserManager.CreateAsync(user, user.Password).Result;
+            if (this.SignInManager.UserManager.Users.Count() == 1)
+            {
+                var roleResult = this.SignInManager.UserManager.AddToRolesAsync(user, new[] { "Admin" }).Result;
+                if (roleResult.Errors.Any())
+                {
+                    return this.View();
+                }
+            }
             if (result.Succeeded)
             {
                 return RedirectToAction("Index", "Home");

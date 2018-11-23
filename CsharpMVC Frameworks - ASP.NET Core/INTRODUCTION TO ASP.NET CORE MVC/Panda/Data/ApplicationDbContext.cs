@@ -4,7 +4,7 @@ using Panda.Models;
 
 namespace Panda.Data
 {
-    public class ApplicationDbContext : IdentityDbContext
+    public class ApplicationDbContext : IdentityDbContext<User>
     {
         public DbSet<Package> Packages { get; set; }
         public new DbSet<User> Users { get; set; }
