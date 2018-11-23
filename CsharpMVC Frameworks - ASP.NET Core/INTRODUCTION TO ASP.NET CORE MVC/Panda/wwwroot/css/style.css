@@ -23,10 +23,10 @@ a {
     text-underline: none;
 }
 
-a:hover {
-    outline: none;
-    text-decoration: none;
-}
+    a:hover {
+        outline: none;
+        text-decoration: none;
+    }
 
 tr {
     margin-right: 0 !important;
@@ -42,4 +42,12 @@ footer {
     bottom: 0;
     border: 0;
     width: 98%;
+}
+
+/*CUSTOM CSS*/
+
+.btn-primary {
+    color: #fff;
+    background-color: #000000;
+    border-color: #000000;
 }
